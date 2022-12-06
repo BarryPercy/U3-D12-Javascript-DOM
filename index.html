@@ -25,7 +25,6 @@
       <button onclick="addParagraph('new paragraph!')">Add P to Div</button>
       <button onclick="firstUlDisappear()">Make UL disappear</button>
       <button onclick="paintItGreen()">Paint It Green</button>
-      <button onclick="changeFooterText()">Change Footer</button>
          <h2>This is the subtitle of the page</h2>
       </div>
       
@@ -61,7 +60,7 @@
   
       <div>
         <p>And this text is just for the exercise too!</p>
-        <h2 style="color: red">
+        <h2 style="color: red" onclick="changeFooterText()">
           Save this page on your computer and open it with VSCode to get the
           questions!
         </h2>
@@ -170,7 +169,8 @@
         */
   
         const changeFooterText = function () {
-          //
+          let footer = document.getElementsByTagName('h2')[1];
+          footer.innerHTML="new text";
         };
   
         /* EXERCISE 11
@@ -178,14 +178,16 @@
         */
   
         const inputField = document.getElementById("input-field");
-        // ...
+        inputField.addEventListener('keydown', function(event) {
+          console.log(event.key);
+        });
   
         /* EXERCISE 12
          Create a welcome alert message when the page successfully loads.
         */
   
         window.onload = function () {
-          //
+          alert('Welcome To The Page')
         };
   
         /* EXERCISE 13
